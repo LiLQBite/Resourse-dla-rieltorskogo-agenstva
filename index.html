@@ -1,0 +1,1340 @@
+file:///C:/Users/ilyas/OneDrive/Desktop/%D0%A3%D0%BC%D0%BD%D0%B5%D0%B9%D1%88%D0%B8%D0%B9/index.html<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Домовой - Риэлторское агентство</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Сброс и базовые стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-primary: #1E3A8A;
+            --color-secondary: #F0E6D2;
+            --color-accent: #D4A017;
+            --color-light: #F5F5F7;
+            --color-white: #FFFFFF;
+            --color-dark: #333333;
+            --color-text: #333333;
+            --color-text-light: #666666;
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Roboto', sans-serif;
+            --transition: all 0.3s ease;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--color-text);
+            line-height: 1.6;
+            background-color: var(--color-white);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2.5rem;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--color-accent);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--color-accent);
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #b38915;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+        }
+
+        .btn-primary:hover {
+            background-color: #162f6e;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-light {
+            background-color: var(--color-light);
+        }
+
+        /* Header */
+        .header {
+            background-color: var(--color-white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+
+        .header__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header__logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .header__logo i {
+            color: var(--color-accent);
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .header__nav {
+            display: flex;
+        }
+
+        .nav__list {
+            display: flex;
+        }
+
+        .nav__item {
+            margin-left: 30px;
+        }
+
+        .nav__link {
+            font-weight: 500;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav__link:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--color-accent);
+            transition: var(--transition);
+        }
+
+        .nav__link:hover {
+            color: var(--color-primary);
+        }
+
+        .nav__link:hover:after {
+            width: 100%;
+        }
+
+        .header__contacts {
+            display: flex;
+            align-items: center;
+        }
+
+        .header__phone {
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-right: 20px;
+            font-size: 1.1rem;
+        }
+
+        .header__callback-button {
+            padding: 10px 20px;
+        }
+
+        .header__mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--color-primary);
+        }
+
+        /* Hero */
+        .hero {
+            padding-top: 150px;
+            padding-bottom: 100px;
+            background: linear-gradient(rgba(30, 58, 138, 0.8), rgba(30, 58, 138, 0.9)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero__title {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: white;
+            animation: fadeInDown 1s ease;
+        }
+
+        .hero__subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero__search-form {
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: var(--border-radius);
+            padding: 30px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: var(--shadow);
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .search-form__row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -10px;
+        }
+
+        .search-form__group {
+            flex: 1;
+            min-width: 200px;
+            padding: 10px;
+        }
+
+        .search-form__label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--color-dark);
+        }
+
+        .search-form__select, .search-form__input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .search-form__select:focus, .search-form__input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        .search-form__button {
+            align-self: flex-end;
+            margin: 10px;
+            padding: 12px 30px;
+        }
+
+        /* Offers */
+        .offers__filter {
+            background-color: var(--color-white);
+            border-radius: var(--border-radius);
+            padding: 20px;
+            margin-bottom: 40px;
+            box-shadow: var(--shadow);
+        }
+
+        .filter__row {
+            display: flex;
+            flex-wrap: wrap;
+            margin: -10px;
+        }
+
+        .filter__group {
+            flex: 1;
+            min-width: 150px;
+            padding: 10px;
+        }
+
+        .filter__label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .filter__select, .filter__input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+        }
+
+        .offers__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .offer-card {
+            background-color: var(--color-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .offer-card__image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .offer-card__content {
+            padding: 20px;
+        }
+
+        .offer-card__title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: var(--color-primary);
+        }
+
+        .offer-card__address {
+            color: var(--color-text-light);
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+
+        .offer-card__details {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .offer-card__detail {
+            display: flex;
+            align-items: center;
+        }
+
+        .offer-card__detail i {
+            color: var(--color-accent);
+            margin-right: 5px;
+        }
+
+        .offer-card__price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            margin-bottom: 20px;
+        }
+
+        .offer-card__button {
+            width: 100%;
+        }
+
+        /* Advantages */
+        .advantages__list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .advantage-item {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: var(--color-white);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .advantage-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .advantage-item__icon {
+            font-size: 3rem;
+            color: var(--color-accent);
+            margin-bottom: 20px;
+        }
+
+        .advantage-item__title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--color-primary);
+        }
+
+        /* Agents */
+        .agents__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .agent-card {
+            background-color: var(--color-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .agent-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .agent-card__image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .agent-card__content {
+            padding: 20px;
+        }
+
+        .agent-card__name {
+            font-size: 1.3rem;
+            color: var(--color-primary);
+            margin-bottom: 5px;
+        }
+
+        .agent-card__position {
+            color: var(--color-accent);
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+
+        .agent-card__contacts {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .agent-card__contact {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--color-light);
+            border-radius: 50%;
+            color: var(--color-primary);
+            transition: var(--transition);
+        }
+
+        .agent-card__contact:hover {
+            background-color: var(--color-primary);
+            color: white;
+        }
+
+        /* Callback */
+        .callback {
+            background: linear-gradient(rgba(30, 58, 138, 0.9), rgba(30, 58, 138, 0.9)), url('https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .callback__title {
+            color: white;
+            text-align: center;
+        }
+
+        .callback__title:after {
+            background-color: var(--color-accent);
+        }
+
+        .callback__subtitle {
+            text-align: center;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .callback__form {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .form__group {
+            margin-bottom: 20px;
+        }
+
+        .form__label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--color-dark);
+            font-weight: 500;
+        }
+
+        .form__input, .form__select, .form__textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: var(--transition);
+        }
+
+        .form__input:focus, .form__select:focus, .form__textarea:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+
+        .form__textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form__button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--color-dark);
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer__content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer__logo {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--color-white);
+            display: flex;
+            align-items: center;
+        }
+
+        .footer__logo i {
+            color: var(--color-accent);
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .footer__about {
+            margin-bottom: 20px;
+        }
+
+        .footer__title {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer__contacts {
+            margin-bottom: 20px;
+        }
+
+        .footer__contact {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .footer__contact i {
+            color: var(--color-accent);
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .footer__nav-list {
+            margin-bottom: 20px;
+        }
+
+        .footer__nav-item {
+            margin-bottom: 10px;
+        }
+
+        .footer__nav-link {
+            transition: var(--transition);
+        }
+
+        .footer__nav-link:hover {
+            color: var(--color-accent);
+            padding-left: 5px;
+        }
+
+        .footer__social {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .footer__social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .footer__social-link:hover {
+            background-color: var(--color-accent);
+            transform: translateY(-3px);
+        }
+
+        .footer__map {
+            height: 200px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            margin-top: 20px;
+        }
+
+        .footer__map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .footer__bottom {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* Анимации */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .header__nav, .header__contacts {
+                display: none;
+            }
+            
+            .header__mobile-toggle {
+                display: block;
+            }
+            
+            .header__container {
+                position: relative;
+            }
+            
+            .header__nav-mobile {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--color-white);
+                box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+                padding: 20px;
+                display: none;
+            }
+            
+            .header__nav-mobile.active {
+                display: block;
+            }
+            
+            .nav__list-mobile {
+                flex-direction: column;
+            }
+            
+            .nav__item-mobile {
+                margin: 0 0 15px 0;
+            }
+            
+            .nav__link-mobile {
+                display: block;
+                padding: 10px 0;
+                border-bottom: 1px solid var(--color-light);
+            }
+            
+            .header__contacts-mobile {
+                margin-top: 20px;
+                text-align: center;
+            }
+            
+            .hero {
+                padding-top: 120px;
+            }
+            
+            .hero__title {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 60px 0;
+            }
+            
+            .hero__title {
+                font-size: 2rem;
+            }
+            
+            .hero__subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .search-form__row, .filter__row {
+                flex-direction: column;
+            }
+            
+            .offers__grid, .advantages__list, .agents__grid, .footer__content {
+                grid-template-columns: 1fr;
+            }
+            
+            .search-form__group, .filter__group {
+                min-width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding-top: 100px;
+            }
+            
+            .hero__title {
+                font-size: 1.8rem;
+            }
+            
+            .hero__search-form, .callback__form {
+                padding: 20px;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header__container">
+            <a href="#" class="header__logo">
+                <i class="fas fa-home"></i>
+                <span>Домовой</span>
+            </a>
+            
+            <nav class="header__nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#offers" class="nav__link">Объекты</a></li>
+                    <li class="nav__item"><a href="#advantages" class="nav__link">Преимущества</a></li>
+                    <li class="nav__item"><a href="#agents" class="nav__link">Агенты</a></li>
+                    <li class="nav__item"><a href="#callback" class="nav__link">Контакты</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header__contacts">
+                <a href="tel:+74951234567" class="header__phone">+7 (495) 123-45-67</a>
+                <button class="btn btn-primary header__callback-button">Заказать звонок</button>
+            </div>
+            
+            <div class="header__mobile-toggle" id="mobileToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero__title">Найдем дом вашей мечты</h1>
+            <p class="hero__subtitle">Профессиональное сопровождение сделок с недвижимостью. Более 15 лет на рынке. Более 1000 успешных сделок.</p>
+            
+            <div class="hero__search-form">
+                <div class="search-form__row">
+                    <div class="search-form__group">
+                        <label class="search-form__label">Тип недвижимости</label>
+                        <select class="search-form__select">
+                            <option value="all">Все типы</option>
+                            <option value="apartment">Квартира</option>
+                            <option value="house">Дом</option>
+                            <option value="commercial">Коммерческая</option>
+                            <option value="land">Земельный участок</option>
+                        </select>
+                    </div>
+                    
+                    <div class="search-form__group">
+                        <label class="search-form__label">Операция</label>
+                        <select class="search-form__select">
+                            <option value="sale">Купить</option>
+                            <option value="rent">Арендовать</option>
+                        </select>
+                    </div>
+                    
+                    <div class="search-form__group">
+                        <label class="search-form__label">Район</label>
+                        <select class="search-form__select">
+                            <option value="all">Все районы</option>
+                            <option value="center">Центральный</option>
+                            <option value="north">Северный</option>
+                            <option value="south">Южный</option>
+                            <option value="west">Западный</option>
+                            <option value="east">Восточный</option>
+                        </select>
+                    </div>
+                    
+                    <div class="search-form__group">
+                        <label class="search-form__label">Цена до, руб.</label>
+                        <input type="text" class="search-form__input" placeholder="10 000 000">
+                    </div>
+                    
+                    <div class="search-form__group">
+                        <button class="btn search-form__button">Найти</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offers -->
+    <section id="offers" class="offers section-light">
+        <div class="container">
+            <h2>Актуальные предложения</h2>
+            
+            <div class="offers__filter">
+                <div class="filter__row">
+                    <div class="filter__group">
+                        <label class="filter__label">Комнат</label>
+                        <select class="filter__select">
+                            <option value="all">Любое</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4+">4+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter__group">
+                        <label class="filter__label">Площадь, м²</label>
+                        <input type="text" class="filter__input" placeholder="от">
+                    </div>
+                    
+                    <div class="filter__group">
+                        <label class="filter__label">Площадь, м²</label>
+                        <input type="text" class="filter__input" placeholder="до">
+                    </div>
+                    
+                    <div class="filter__group">
+                        <label class="filter__label">Этаж</label>
+                        <select class="filter__select">
+                            <option value="all">Любой</option>
+                            <option value="1">1</option>
+                            <option value="2-5">2-5</option>
+                            <option value="6-10">6-10</option>
+                            <option value="11+">11+</option>
+                        </select>
+                    </div>
+                    
+                    <div class="filter__group">
+                        <button class="btn filter__button">Применить</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="offers__grid">
+                <!-- Карточка 1 -->
+                <div class="offer-card">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Квартира в центре" class="offer-card__image">
+                    <div class="offer-card__content">
+                        <h3 class="offer-card__title">3-комн. квартира</h3>
+                        <p class="offer-card__address">ул. Тверская, 25, Центральный район</p>
+                        <div class="offer-card__details">
+                            <div class="offer-card__detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>85 м²</span>
+                            </div>
+                            <div class="offer-card__detail">
+                                <i class="fas fa-bed"></i>
+                                <span>3 комнаты</span>
+                            </div>
+                            <div class="offer-card__detail">
+                                <i class="fas fa-layer-group"></i>
+                                <span>5 этаж</span>
+                            </div>
+                        </div>
+                        <div class="offer-card__price">15 800 000 ₽</div>
+                        <button class="btn offer-card__button">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Карточка 2 -->
+                <div class="offer-card">
+                    <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Квартира с ремонтом" class="offer-card__image">
+                    <div class="offer-card__content">
+                        <h3 class="offer-card__title">2-комн. квартира</h3>
+                        <p class="offer-card__address">пр. Мира, 12, Северный район</p>
+                        <div class="offer-card__details">
+                            <div class="offer-card__detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>65 м²</span>
+                            </div>
+                            <div class="offer-card__detail">
+                                <i class="fas fa-bed"></i>
+                                <span>2 комнаты</span>
+                            </div>
+                            <div class="offer-card__detail">
+                                <i class="fas fa-layer-group"></i>
+                                <span>9 этаж</span>
+                            </div>
+                        </div>
+                        <div class="offer-card__price">9 500 000 ₽</div>
+                        <button class="btn offer-card__button">Подробнее</button>
+                    </div>
+                </div>
+                
+                <!-- Карточка 3 -->
+                <div class="offer-card">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Загородный дом" class="offer-card__image">
+                    <div class="offer-card__content">
+                        <h3 class="offer-card__title">Загородный дом</h3>
+                        <p class="offer-card__address">Коттеджный посёлок "Сосны", 15 км от города</p>
+                        <div class="offer-card__details">
+                            <div class="offer-card__detail">
+                                <i class="fas fa-ruler-combined"></i>
+                                <span>150 м²</span>
+                            </div>
+                            <div class="offer-card__detail">
+                                <i class="fas fa-bed"></i>
+                                <span>4 комнаты</span>
+                            </div>
+                            <div class="offer-card__detail">
+                                <i class="fas fa-tree"></i>
+                                <span>10 соток</span>
+                            </div>
+                        </div>
+                        <div class="offer-card__price">24 300 000 ₽</div>
+                        <button class="btn offer-card__button">Подробнее</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="btn btn-primary">Все предложения</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advantages -->
+    <section id="advantages" class="advantages">
+        <div class="container">
+            <h2>Почему выбирают нас</h2>
+            
+            <div class="advantages__list">
+                <div class="advantage-item">
+                    <div class="advantage-item__icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="advantage-item__title">Безопасность сделок</h3>
+                    <p>Полное юридическое сопровождение, проверка документов, гарантия чистоты сделки.</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <div class="advantage-item__icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="advantage-item__title">Экспертные оценки</h3>
+                    <p>Точная оценка рыночной стоимости объекта, анализ перспектив роста цены.</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <div class="advantage-item__icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="advantage-item__title">Персональный агент</h3>
+                    <p>Индивидуальный подход, сопровождение на всех этапах сделки, конфиденциальность.</p>
+                </div>
+                
+                <div class="advantage-item">
+                    <div class="advantage-item__icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3 class="advantage-item__title">Большая база объектов</h3>
+                    <p>Доступ к эксклюзивным предложениям, постоянное обновление базы объектов.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agents -->
+    <section id="agents" class="agents section-light">
+        <div class="container">
+            <h2>Наши агенты</h2>
+            
+            <div class="agents__grid">
+                <div class="agent-card">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Анна Смирнова" class="agent-card__image">
+                    <div class="agent-card__content">
+                        <h3 class="agent-card__name">Анна Смирнова</h3>
+                        <p class="agent-card__position">Старший риэлтор</p>
+                        <p>Опыт работы 12 лет. Специализация: элитная недвижимость, загородные дома.</p>
+                        <div class="agent-card__contacts">
+                            <a href="tel:+74951112233" class="agent-card__contact">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                            <a href="mailto:anna@domovoy.ru" class="agent-card__contact">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="#" class="agent-card__contact">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="agent-card">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Дмитрий Иванов" class="agent-card__image">
+                    <div class="agent-card__content">
+                        <h3 class="agent-card__name">Дмитрий Иванов</h3>
+                        <p class="agent-card__position">Риэлтор-аналитик</p>
+                        <p>Опыт работы 8 лет. Специализация: инвестиции в недвижимость, коммерческая недвижимость.</p>
+                        <div class="agent-card__contacts">
+                            <a href="tel:+74954445566" class="agent-card__contact">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                            <a href="mailto:dmitry@domovoy.ru" class="agent-card__contact">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="#" class="agent-card__contact">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="agent-card">
+                    <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Елена Петрова" class="agent-card__image">
+                    <div class="agent-card__content">
+                        <h3 class="agent-card__name">Елена Петрова</h3>
+                        <p class="agent-card__position">Риэлтор-переговорщик</p>
+                        <p>Опыт работы 6 лет. Специализация: вторичное жилье, аренда элитной недвижимости.</p>
+                        <div class="agent-card__contacts">
+                            <a href="tel:+74957778899" class="agent-card__contact">
+                                <i class="fas fa-phone"></i>
+                            </a>
+                            <a href="mailto:elena@domovoy.ru" class="agent-card__contact">
+                                <i class="fas fa-envelope"></i>
+                            </a>
+                            <a href="#" class="agent-card__contact">
+                                <i class="fab fa-viber"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Callback -->
+    <section id="callback" class="callback">
+        <div class="container">
+            <h2 class="callback__title">Остались вопросы?</h2>
+            <p class="callback__subtitle">Оставьте заявку и наш специалист свяжется с вами в течение 15 минут для бесплатной консультации</p>
+            
+            <div class="callback__form">
+                <form id="contactForm">
+                    <div class="form__group">
+                        <label for="name" class="form__label">Ваше имя</label>
+                        <input type="text" id="name" class="form__input" placeholder="Иван Иванов" required>
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="phone" class="form__label">Телефон</label>
+                        <input type="tel" id="phone" class="form__input" placeholder="+7 (999) 123-45-67" required>
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="email" class="form__label">Email</label>
+                        <input type="email" id="email" class="form__input" placeholder="example@mail.ru">
+                    </div>
+                    
+                    <div class="form__group">
+                        <label for="message" class="form__label">Сообщение</label>
+                        <textarea id="message" class="form__textarea" placeholder="Опишите вашу ситуацию или интересующий объект..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn form__button">Отправить заявку</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__col">
+                    <div class="footer__logo">
+                        <i class="fas fa-home"></i>
+                        <span>Домовой</span>
+                    </div>
+                    <p class="footer__about">Профессиональное риэлторское агентство с 2008 года. Помогаем клиентам находить идеальное жилье и совершать безопасные сделки с недвижимостью.</p>
+                    
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link">
+                            <i class="fab fa-vk"></i>
+                        </a>
+                        <a href="#" class="footer__social-link">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" class="footer__social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="footer__social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer__col">
+                    <h3 class="footer__title">Контакты</h3>
+                    <div class="footer__contacts">
+                        <div class="footer__contact">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>г. Москва, ул. Тверская, д. 10</span>
+                        </div>
+                        <div class="footer__contact">
+                            <i class="fas fa-phone"></i>
+                            <span>+7 (495) 123-45-67</span>
+                        </div>
+                        <div class="footer__contact">
+                            <i class="fas fa-envelope"></i>
+                            <span>info@domovoy.ru</span>
+                        </div>
+                        <div class="footer__contact">
+                            <i class="fas fa-clock"></i>
+                            <span>Пн-Пт: 9:00-20:00, Сб: 10:00-18:00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer__col">
+                    <h3 class="footer__title">Навигация</h3>
+                    <ul class="footer__nav-list">
+                        <li class="footer__nav-item"><a href="#offers" class="footer__nav-link">Объекты</a></li>
+                        <li class="footer__nav-item"><a href="#advantages" class="footer__nav-link">Преимущества</a></li>
+                        <li class="footer__nav-item"><a href="#agents" class="footer__nav-link">Агенты</a></li>
+                        <li class="footer__nav-item"><a href="#callback" class="footer__nav-link">Консультация</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__col">
+                    <h3 class="footer__title">Мы на карте</h3>
+                    <div class="footer__map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2245.373789429247!2d37.61842307688238!3d55.750726987514204!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b54a50b315e573%3A0xa886bf5a3d9b2e68!2z0J_RgNC-0YHQvdC40YfQtdGB0LrQuNC5INGD0L3QuNCy0LXRgNGB0LjRgtC10YI!5e0!3m2!1sru!2sru!4v1684872814340!5m2!1sru!2sru" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2026 Риэлторское агентство "Домовой". Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Мобильное меню
+        const mobileToggle = document.getElementById('mobileToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        
+        mobileToggle.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            mobileToggle.innerHTML = mobileMenu.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Закрытие мобильного меню при клике на ссылку
+        const mobileLinks = document.querySelectorAll('.nav__link-mobile');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.remove('active');
+                mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Плавная прокрутка для якорных ссылок
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Обработка формы
+        const contactForm = document.getElementById('contactForm');
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // В реальном приложении здесь был бы код отправки данных на сервер
+            alert('Спасибо! Ваша заявка принята. Мы свяжемся с вами в ближайшее время.');
+            contactForm.reset();
+        });
+        
+        // Обработка кнопки "Заказать звонок"
+        const callbackButtons = document.querySelectorAll('.header__callback-button');
+        callbackButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                alert('Оставьте ваш номер телефона, и мы перезвоним вам в течение 15 минут!');
+            });
+        });
+        
+        // Анимация при скролле
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.advantage-item, .offer-card, .agent-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if(elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        };
+        
+        // Устанавливаем начальные стили для анимируемых элементов
+        document.querySelectorAll('.advantage-item, .offer-card, .agent-card').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+        
+        window.addEventListener('scroll', animateOnScroll);
+        // Вызываем сразу, чтобы анимировать элементы, которые уже видны
+        window.addEventListener('load', animateOnScroll);
+    </script>
+</body>
+</html>
