@@ -1,4 +1,4 @@
-# Домовой - Риэлторское агентство
+# Домовой - Риэлторское агентствоhttps://github.com/settings/profile
 
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
@@ -153,6 +153,8 @@ GitHub - хостинг репозитория(#технологии)
     ├── Повторная навигация
     ├── Социальные сети
     └── Карта расположения
+
+<img width="1160" height="876" alt="Снимок экрана 2026-01-24 100742" src="https://github.com/user-attachments/assets/046447b7-3cff-4ab6-a46c-305457092a16" />
 
 Описание проекта
 
