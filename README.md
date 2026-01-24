@@ -71,8 +71,7 @@ GitHub - хостинг репозитория(#технологии)
 ### Скриншоты:
 
 ![Главная страница](https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80)
-
-*Скриншот главной страницы сайта*
+<img width="1854" height="916" alt="Снимок экрана 2026-01-24 094007" src="https://github.com/user-attachments/assets/d448fd66-2368-4248-aded-7276d30a5c9f" />
 
 ## Функциональность
 
