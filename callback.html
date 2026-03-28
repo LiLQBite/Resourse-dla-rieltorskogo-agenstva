@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Домовой - Риэлторское агентство</title>
+  <title>Контакты - Домовой</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -45,59 +45,23 @@
     </div>
   </div>
 </header>
-<section class="hero">
+<main style="padding-top:110px;">
+<section id="callback" class="callback" style="padding-top:40px;">
   <div class="container">
-    <h1 class="hero__title">Найдем дом вашей мечты</h1>
-    <p class="hero__subtitle">Профессиональное сопровождение сделок с недвижимостью. Более 15 лет на рынке. Более 1000 успешных сделок.</p>
-    <div class="hero__search-form">
-      <div class="search-form__row">
-        <div class="search-form__group">
-          <label class="search-form__label">Тип недвижимости</label>
-          <select class="search-form__select">
-            <option value="all">Все типы</option><option value="apartment">Квартира</option><option value="house">Дом</option><option value="commercial">Коммерческая</option><option value="land">Земельный участок</option>
-          </select>
-        </div>
-        <div class="search-form__group">
-          <label class="search-form__label">Операция</label>
-          <select class="search-form__select"><option value="sale">Купить</option><option value="rent">Арендовать</option></select>
-        </div>
-        <div class="search-form__group">
-          <label class="search-form__label">Район</label>
-          <select class="search-form__select">
-            <option value="all">Все районы</option><option value="center">Центральный</option><option value="north">Северный</option><option value="south">Южный</option><option value="west">Западный</option><option value="east">Восточный</option>
-          </select>
-        </div>
-        <div class="search-form__group">
-          <label class="search-form__label">Цена до, руб.</label>
-          <input type="text" class="search-form__input" placeholder="10 000 000">
-        </div>
-        <div class="search-form__group">
-          <button class="btn search-form__button">Найти</button>
-        </div>
-      </div>
+    <h2 class="callback__title">Остались вопросы?</h2>
+    <p class="callback__subtitle">Оставьте заявку и наш специалист свяжется с вами в течение 15 минут для бесплатной консультации</p>
+    <div class="callback__form">
+      <form id="contactForm">
+        <div class="form__group"><label for="name" class="form__label">Ваше имя</label><input type="text" id="name" class="form__input" placeholder="Иван Иванов" required></div>
+        <div class="form__group"><label for="phone" class="form__label">Телефон</label><input type="tel" id="phone" class="form__input" placeholder="+7 (999) 123-45-67" required></div>
+        <div class="form__group"><label for="email" class="form__label">Email</label><input type="email" id="email" class="form__input" placeholder="example@mail.ru"></div>
+        <div class="form__group"><label for="message" class="form__label">Сообщение</label><textarea id="message" class="form__textarea" placeholder="Опишите вашу ситуацию или интересующий объект..."></textarea></div>
+        <button type="submit" class="btn form__button">Отправить заявку</button>
+      </form>
     </div>
   </div>
 </section>
-
-<section class="section-light">
-  <div class="container">
-    <h2>Разделы сайта</h2>
-    <div class="offers__grid">
-      <a class="offer-card" href="offers.html">
-        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" class="offer-card__image" alt="Объекты">
-        <div class="offer-card__content"><h3 class="offer-card__title">Объекты</h3><p>Смотрите актуальные предложения по покупке и аренде.</p></div>
-      </a>
-      <a class="offer-card" href="advantages.html">
-        <img src="https://images.unsplash.com/photo-1556156653-e5a64a42d1b7?auto=format&fit=crop&w=800&q=80" class="offer-card__image" alt="Преимущества">
-        <div class="offer-card__content"><h3 class="offer-card__title">Преимущества</h3><p>Почему клиенты выбирают наше агентство.</p></div>
-      </a>
-      <a class="offer-card" href="agents.html">
-        <img src="https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=800&q=80" class="offer-card__image" alt="Агенты">
-        <div class="offer-card__content"><h3 class="offer-card__title">Агенты</h3><p>Познакомьтесь с нашей командой специалистов.</p></div>
-      </a>
-    </div>
-  </div>
-</section>
+</main>
 <footer class="footer">
   <div class="container">
     <div class="footer__content">

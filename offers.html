@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Домовой - Риэлторское агентство</title>
+  <title>Объекты - Домовой</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -45,59 +45,57 @@
     </div>
   </div>
 </header>
-<section class="hero">
+<main style="padding-top:110px;">
+<section id="offers" class="offers section-light" style="padding-top:40px;">
   <div class="container">
-    <h1 class="hero__title">Найдем дом вашей мечты</h1>
-    <p class="hero__subtitle">Профессиональное сопровождение сделок с недвижимостью. Более 15 лет на рынке. Более 1000 успешных сделок.</p>
-    <div class="hero__search-form">
-      <div class="search-form__row">
-        <div class="search-form__group">
-          <label class="search-form__label">Тип недвижимости</label>
-          <select class="search-form__select">
-            <option value="all">Все типы</option><option value="apartment">Квартира</option><option value="house">Дом</option><option value="commercial">Коммерческая</option><option value="land">Земельный участок</option>
-          </select>
+    <h2>Актуальные предложения</h2>
+    <div class="offers__filter">
+      <div class="filter__row">
+        <div class="filter__group">
+          <label class="filter__label">Комнат</label>
+          <select class="filter__select"><option value="all">Любое</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4+">4+</option></select>
         </div>
-        <div class="search-form__group">
-          <label class="search-form__label">Операция</label>
-          <select class="search-form__select"><option value="sale">Купить</option><option value="rent">Арендовать</option></select>
+        <div class="filter__group"><label class="filter__label">Площадь, м²</label><input type="text" class="filter__input" placeholder="от"></div>
+        <div class="filter__group"><label class="filter__label">Площадь, м²</label><input type="text" class="filter__input" placeholder="до"></div>
+        <div class="filter__group">
+          <label class="filter__label">Этаж</label>
+          <select class="filter__select"><option value="all">Любой</option><option value="1">1</option><option value="2-5">2-5</option><option value="6-10">6-10</option><option value="11+">11+</option></select>
         </div>
-        <div class="search-form__group">
-          <label class="search-form__label">Район</label>
-          <select class="search-form__select">
-            <option value="all">Все районы</option><option value="center">Центральный</option><option value="north">Северный</option><option value="south">Южный</option><option value="west">Западный</option><option value="east">Восточный</option>
-          </select>
+        <div class="filter__group"><button class="btn filter__button">Применить</button></div>
+      </div>
+    </div>
+
+    <div class="offers__grid">
+      <div class="offer-card">
+        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Квартира в центре" class="offer-card__image">
+        <div class="offer-card__content">
+          <h3 class="offer-card__title">3-комн. квартира</h3><p class="offer-card__address">ул. Тверская, 25, Центральный район</p>
+          <div class="offer-card__details"><div class="offer-card__detail"><i class="fas fa-ruler-combined"></i><span>85 м²</span></div><div class="offer-card__detail"><i class="fas fa-bed"></i><span>3 комнаты</span></div><div class="offer-card__detail"><i class="fas fa-layer-group"></i><span>5 этаж</span></div></div>
+          <div class="offer-card__price">15 800 000 ₽</div><button class="btn offer-card__button">Подробнее</button>
         </div>
-        <div class="search-form__group">
-          <label class="search-form__label">Цена до, руб.</label>
-          <input type="text" class="search-form__input" placeholder="10 000 000">
+      </div>
+
+      <div class="offer-card">
+        <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Квартира с ремонтом" class="offer-card__image">
+        <div class="offer-card__content">
+          <h3 class="offer-card__title">2-комн. квартира</h3><p class="offer-card__address">пр. Мира, 12, Северный район</p>
+          <div class="offer-card__details"><div class="offer-card__detail"><i class="fas fa-ruler-combined"></i><span>65 м²</span></div><div class="offer-card__detail"><i class="fas fa-bed"></i><span>2 комнаты</span></div><div class="offer-card__detail"><i class="fas fa-layer-group"></i><span>9 этаж</span></div></div>
+          <div class="offer-card__price">9 500 000 ₽</div><button class="btn offer-card__button">Подробнее</button>
         </div>
-        <div class="search-form__group">
-          <button class="btn search-form__button">Найти</button>
+      </div>
+
+      <div class="offer-card">
+        <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Загородный дом" class="offer-card__image">
+        <div class="offer-card__content">
+          <h3 class="offer-card__title">Загородный дом</h3><p class="offer-card__address">Коттеджный посёлок "Сосны", 15 км от города</p>
+          <div class="offer-card__details"><div class="offer-card__detail"><i class="fas fa-ruler-combined"></i><span>150 м²</span></div><div class="offer-card__detail"><i class="fas fa-bed"></i><span>4 комнаты</span></div><div class="offer-card__detail"><i class="fas fa-tree"></i><span>10 соток</span></div></div>
+          <div class="offer-card__price">24 300 000 ₽</div><button class="btn offer-card__button">Подробнее</button>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<section class="section-light">
-  <div class="container">
-    <h2>Разделы сайта</h2>
-    <div class="offers__grid">
-      <a class="offer-card" href="offers.html">
-        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" class="offer-card__image" alt="Объекты">
-        <div class="offer-card__content"><h3 class="offer-card__title">Объекты</h3><p>Смотрите актуальные предложения по покупке и аренде.</p></div>
-      </a>
-      <a class="offer-card" href="advantages.html">
-        <img src="https://images.unsplash.com/photo-1556156653-e5a64a42d1b7?auto=format&fit=crop&w=800&q=80" class="offer-card__image" alt="Преимущества">
-        <div class="offer-card__content"><h3 class="offer-card__title">Преимущества</h3><p>Почему клиенты выбирают наше агентство.</p></div>
-      </a>
-      <a class="offer-card" href="agents.html">
-        <img src="https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=800&q=80" class="offer-card__image" alt="Агенты">
-        <div class="offer-card__content"><h3 class="offer-card__title">Агенты</h3><p>Познакомьтесь с нашей командой специалистов.</p></div>
-      </a>
-    </div>
-  </div>
-</section>
+</main>
 <footer class="footer">
   <div class="container">
     <div class="footer__content">

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Домовой - Риэлторское агентство</title>
+  <title>Агенты - Домовой</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
@@ -45,59 +45,36 @@
     </div>
   </div>
 </header>
-<section class="hero">
+<main style="padding-top:110px;">
+<section id="agents" class="agents section-light" style="padding-top:40px;">
   <div class="container">
-    <h1 class="hero__title">Найдем дом вашей мечты</h1>
-    <p class="hero__subtitle">Профессиональное сопровождение сделок с недвижимостью. Более 15 лет на рынке. Более 1000 успешных сделок.</p>
-    <div class="hero__search-form">
-      <div class="search-form__row">
-        <div class="search-form__group">
-          <label class="search-form__label">Тип недвижимости</label>
-          <select class="search-form__select">
-            <option value="all">Все типы</option><option value="apartment">Квартира</option><option value="house">Дом</option><option value="commercial">Коммерческая</option><option value="land">Земельный участок</option>
-          </select>
+    <h2>Наши агенты</h2>
+    <div class="agents__grid">
+      <div class="agent-card">
+        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Анна Смирнова" class="agent-card__image">
+        <div class="agent-card__content">
+          <h3 class="agent-card__name">Анна Смирнова</h3><p class="agent-card__position">Старший риэлтор</p><p>Опыт работы 12 лет. Специализация: элитная недвижимость, загородные дома.</p>
+          <div class="agent-card__contacts"><a href="tel:+74951112233" class="agent-card__contact"><i class="fas fa-phone"></i></a><a href="mailto:anna@domovoy.ru" class="agent-card__contact"><i class="fas fa-envelope"></i></a><a href="#" class="agent-card__contact"><i class="fab fa-whatsapp"></i></a></div>
         </div>
-        <div class="search-form__group">
-          <label class="search-form__label">Операция</label>
-          <select class="search-form__select"><option value="sale">Купить</option><option value="rent">Арендовать</option></select>
+      </div>
+      <div class="agent-card">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Дмитрий Иванов" class="agent-card__image">
+        <div class="agent-card__content">
+          <h3 class="agent-card__name">Дмитрий Иванов</h3><p class="agent-card__position">Риэлтор-аналитик</p><p>Опыт работы 8 лет. Специализация: инвестиции в недвижимость, коммерческая недвижимость.</p>
+          <div class="agent-card__contacts"><a href="tel:+74954445566" class="agent-card__contact"><i class="fas fa-phone"></i></a><a href="mailto:dmitry@domovoy.ru" class="agent-card__contact"><i class="fas fa-envelope"></i></a><a href="#" class="agent-card__contact"><i class="fab fa-telegram"></i></a></div>
         </div>
-        <div class="search-form__group">
-          <label class="search-form__label">Район</label>
-          <select class="search-form__select">
-            <option value="all">Все районы</option><option value="center">Центральный</option><option value="north">Северный</option><option value="south">Южный</option><option value="west">Западный</option><option value="east">Восточный</option>
-          </select>
-        </div>
-        <div class="search-form__group">
-          <label class="search-form__label">Цена до, руб.</label>
-          <input type="text" class="search-form__input" placeholder="10 000 000">
-        </div>
-        <div class="search-form__group">
-          <button class="btn search-form__button">Найти</button>
+      </div>
+      <div class="agent-card">
+        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Елена Петрова" class="agent-card__image">
+        <div class="agent-card__content">
+          <h3 class="agent-card__name">Елена Петрова</h3><p class="agent-card__position">Риэлтор-переговорщик</p><p>Опыт работы 6 лет. Специализация: вторичное жилье, аренда элитной недвижимости.</p>
+          <div class="agent-card__contacts"><a href="tel:+74957778899" class="agent-card__contact"><i class="fas fa-phone"></i></a><a href="mailto:elena@domovoy.ru" class="agent-card__contact"><i class="fas fa-envelope"></i></a><a href="#" class="agent-card__contact"><i class="fab fa-viber"></i></a></div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-<section class="section-light">
-  <div class="container">
-    <h2>Разделы сайта</h2>
-    <div class="offers__grid">
-      <a class="offer-card" href="offers.html">
-        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80" class="offer-card__image" alt="Объекты">
-        <div class="offer-card__content"><h3 class="offer-card__title">Объекты</h3><p>Смотрите актуальные предложения по покупке и аренде.</p></div>
-      </a>
-      <a class="offer-card" href="advantages.html">
-        <img src="https://images.unsplash.com/photo-1556156653-e5a64a42d1b7?auto=format&fit=crop&w=800&q=80" class="offer-card__image" alt="Преимущества">
-        <div class="offer-card__content"><h3 class="offer-card__title">Преимущества</h3><p>Почему клиенты выбирают наше агентство.</p></div>
-      </a>
-      <a class="offer-card" href="agents.html">
-        <img src="https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=800&q=80" class="offer-card__image" alt="Агенты">
-        <div class="offer-card__content"><h3 class="offer-card__title">Агенты</h3><p>Познакомьтесь с нашей командой специалистов.</p></div>
-      </a>
-    </div>
-  </div>
-</section>
+</main>
 <footer class="footer">
   <div class="container">
     <div class="footer__content">
